@@ -21,7 +21,7 @@ export default  function Cart() {
   async function updateProducts(productId:string , count:number){
   setUpdatingId(productId)
     const data = await updateProduct(productId , count)
-    if(data.status=='success')
+    if(data?.status=='success')
   {
     toast.success('update your product')
     setCartData(data)
@@ -32,7 +32,7 @@ export default  function Cart() {
   async function clearProducts(){
   setIsClearing(true)
     const data = await clearProduct()
-     if(data.message=='success')
+     if(data?.message=='success')
   {
     toast.success(' Your Cart Has been Empty')
     setCartData(null)
@@ -43,7 +43,7 @@ export default  function Cart() {
   async function deleteProducts(productId:string ){
   setRemovingId(productId)
     const data = await removeProduct(productId)
-    if(data.status=='success')
+    if(data?.status=='success')
   {
     toast.success(' product deleted')
     setCartData(data)

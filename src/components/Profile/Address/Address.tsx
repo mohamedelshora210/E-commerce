@@ -17,7 +17,7 @@ export default function Address() {
     const [addressData, setAddressData] = useState< DataAddressI| null>(null)
     const [removingId, setRemovingId] = useState<string | null>(null)
     async function Address(){
-        const response = await fetch('http://localhost:3000/api/get-address')
+        const response = await fetch(`${process.env.NEXT_URL}api/get-address`)
         const data  = await response.json()
         setAddressData(data)
     }

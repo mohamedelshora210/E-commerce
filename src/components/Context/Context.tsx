@@ -1,5 +1,5 @@
 'use client'
-import { getUserToken } from "@/app/Helpers/getUserToken";
+
 import { CartResponseI } from "@/interface";
 import { createContext, ReactNode, useEffect, useState } from "react";
 
@@ -22,7 +22,7 @@ export default function CartContextProvider({children} : {children : ReactNode})
   const [isLoading, setIsLoading] = useState(false)
       async function getCart(){
         setIsLoading(true)
-        const response = await fetch('http://localhost:3000/api/get-cart')
+        const response = await fetch(`${process.env.NEXT_URL}api/get-cart`)
 
         const data : CartResponseI = await response.json()
         setCartData(data)
