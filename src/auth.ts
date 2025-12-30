@@ -55,6 +55,6 @@ providers : [
             signIn:'/signin',
             error:'/signin'
         },
-        secret : process.env.NEXT_AUTH_SECRET
+        secret : process.env.NEXTAUTH_SECRET
     
 }
