@@ -3,9 +3,10 @@ import { cookies } from "next/headers";
 
 
 export async function getUserToken(){
-    const x = (await cookies()).get('next-auth.session-token')?.value
+    const MyCookies = await cookies()
+    const MyToken = MyCookies.get('next-auth.session-token')?.value || MyCookies.get('__Secure-next-auth.session-token')?.value 
     const secretToken = await decode({
-        token : x,
+        token : MyToken,
         secret : process.env.NEXT_AUTH_SECRET!
     })
     return secretToken?.token
