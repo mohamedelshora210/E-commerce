@@ -46,7 +46,7 @@ const {data : products} : {data : ProductI[]} = await response.json()
   <CardContent>
     <CardDescription >{product.category.name} - {product.brand.name}</CardDescription>
     <div className='flex items-center justify-between'>
-        <CardTitle className='my-3'>{product.title.split(' ' , 2).join(' ')}</CardTitle>
+        <Link href={`/products/${product._id}`}><CardTitle className='my-3 font-bold text-teal-800 hover:text-teal-700 duration-200 '>{product.title.split(' ' , 2).join(' ')}</CardTitle></Link>
         <HeartIconComponent productId={product._id}/>
     </div>
         <div className='flex gap-1 my-2'>

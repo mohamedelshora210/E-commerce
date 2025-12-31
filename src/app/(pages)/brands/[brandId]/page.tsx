@@ -52,7 +52,7 @@ export default async function page({params} : {params : Params}) {
   <CardContent>
     <CardDescription >{brand.category.name} - {brand.brand.name}</CardDescription>
     <div className='flex items-center justify-between'>
-        <CardTitle className='my-3'>{brand.title.split(' ' , 2  ).join(' ')}</CardTitle>
+        <Link href={`/products/${brand._id}`}><CardTitle className='my-3 font-bold text-teal-800 hover:text-teal-700 duration-200'>{brand.title.split(' ' , 2  ).join(' ')}</CardTitle></Link>
         <HeartIconComponent productId={brand._id}/>
     </div>
         
