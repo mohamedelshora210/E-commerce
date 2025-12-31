@@ -23,7 +23,7 @@ export default function WishListContextProvider ({children} : {children : ReactN
     const [isLoadingWishList, setIsLoadingWishList] = useState<boolean>(false)
     async function getWishList (){
         setIsLoadingWishList(true)
-        const response = await fetch(`${process.env.NEXT_URL}api/get-wishList`)
+        const response = await fetch(`/api/get-wishList`)
         const data = await response.json()
         setWishListData(data)
         setIsLoadingWishList(false)

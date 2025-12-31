@@ -17,7 +17,7 @@ export default  function AllOrders() {
 const [itemsOrder, setItemsOrder] = useState<OrderI[] | null>(null)
 
 async function Orders(){
-    const response = await fetch(`${process.env.NEXT_URL}api/get-allorders`)
+    const response = await fetch(`/api/get-allorders`)
     const data  = await response.json()
     setItemsOrder(data)
 }
