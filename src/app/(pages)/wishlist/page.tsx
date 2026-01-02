@@ -3,6 +3,7 @@ import { WishListContext } from '@/components/Context/WishListContext'
 import HeartIconComponent from '@/components/HeartIcon/HeartIcon';
 import ShoppingCart from '@/components/ShoppingCart/ShoppingCart';
 import StarIcon from '@/components/starIcon/StarIcon';
+import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
@@ -25,7 +26,10 @@ export default function WishList() {
 
          {!wishListData?.data ? <div className='text-muted-foreground font-semibold flex items-center justify-center min-h-75'><Loader2 className='animate-spin text-teal-600 w-13 h-13' strokeWidth={3}/></div> :  wishListData?.data.length == 0 ? <div className='text-muted-foreground font-semibold flex items-center justify-center min-h-75'><p>No products found in whishList.</p></div> :
               <div className='mx-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 my-5'>
-              {wishListData?.data.map((item)=> <div key={item.id}> <Card className='-mb-1'>
+              {wishListData?.data.map((item)=> <div key={item.id}> <Card className='-mb-1 relative overflow-hidden'>
+        
+            {item.ratingsAverage >= 4.5 && <Badge className='ml-2 px-10 py-2  rounded-none bg-yellow-600 absolute z-3 end-0 top-6 -translate-y-2 translate-x-8 rotate-45'>Popular</Badge>
+        }
           <CardHeader className='group  overflow-hidden relative'>
             <Image className='group-hover:scale-[1.3] group-hover:rotate-3 duration-450 w-[85%] mx-auto ' src={item.imageCover} alt={item.title} width={180} height={180}/>
         
