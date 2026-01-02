@@ -11,12 +11,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useContext, } from 'react'
 
+
+
 export default function WishList() {
    const {wishListData } = useContext(WishListContext)
 
    
   return (
     <>
+
     <div className='container mx-auto'>
      <h2 className=' mx-3 text-2xl font-bold mt-2 mb-4 flex gap-1 items-center'><span>WishList</span> <Heart className='text-red-600 ' strokeWidth={3}/> </h2>
 

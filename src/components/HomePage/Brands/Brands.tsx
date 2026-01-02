@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { getProductsApi } from '@/components/getProductsActions/getProducts';
 import { BrandI } from '@/interface';
 import Link from 'next/link';
+import CursalBrands from './CursalBrands/CursalBrands';
 
 export default async function Brands() {
      const response = await getProductsApi('brands')
@@ -16,34 +17,10 @@ export default async function Brands() {
             <span className='absolute z-1 peer'>All Brands</span> 
             <ShoppingBasket className='text-gray-400 peer-hover:text-teal-500 duration-200 absolute w-13 h-13' strokeWidth={2.5}/>
              </h2>
-        <div className="flex gap-5 animate-scroll-brand  px-3">
+             <CursalBrands brands={brands}/>
+
+    </div>
     
-    {brands.map((brand) => (
-      <Link key={brand._id} href={`/brands/${brand._id}`}>
-        <div className="min-w-[260px] cursor-pointer group hover:scale-[1.05] hover:rotate-1 duration-300">
-          <Card className="rounded-xl overflow-hidden">
-            <CardHeader>
-              <Image
-                src={brand.image}
-                alt={brand.name}
-                width={200}
-                height={200}
-                className="w-full h-[200px] object-cover"
-              />
-            </CardHeader>
-
-            <CardContent>
-              <CardTitle className="text-center font-bold text-xl group-hover:text-teal-600 duration-300 uppercase">
-                {brand.name}
-              </CardTitle>
-            </CardContent>
-          </Card>
-        </div>
-      </Link>
-    ))}
-
-  </div>
-</div>
     </>
   )
 }

@@ -12,6 +12,10 @@ import { BrandI } from '@/interface';
 import  Link  from 'next/link';
 
 
+export const metadata = {
+  title: "Brands",
+};
+
 export default async function Brands() {
 
     const response = await getProductsApi('brands')

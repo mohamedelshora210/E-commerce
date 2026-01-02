@@ -9,6 +9,8 @@ import MySessionProvider from "@/components/MySessionProvider/MySessionProvider"
 import Footer from "@/components/Footer/Footer";
 import "animate.css";
 
+
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -31,6 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-teal-50`}
       >

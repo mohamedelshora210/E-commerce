@@ -16,6 +16,9 @@ import StarIcon from '@/components/starIcon/StarIcon';
 
 import CardFooterAddToCart from '@/components/CardFooterAddToCart/CardFooterAddToCart';
 
+export const metadata = {
+  title: "ProductDetails",
+};
 
 export default async function ProductDetails({params} : {params :Params}) {
 let {productId} =await params
@@ -29,14 +32,12 @@ let {productId} =await params
     <>
     <div className='container mx-auto'>
      <div className='flex items-center justify-center mx-auto w-4/6 min-h-100 my-5 '>
-       <Card className='w-full grid md:grid-cols-3 grid-cols-1 px-2'>
-        <div className=' md:flex gap-2 '>
-
-          
+       <Card className='w-full grid md:grid-cols-6 grid-cols-1 px-2'>
+        <div className='col-span-3'>
         <ProductSlider images={product.images} altContent={product.title} />
         </div>
 
-  <div className='col-span-2 '>
+  <div className='col-span-3 '>
       <CardHeader >
         <div className='flex items-center justify-between'> 
         <CardDescription className='text-md font-semibold'>

@@ -26,6 +26,9 @@ const steps = [
   { title: 'Reset Password', icon: LockOpen },
   { title: 'Password Updated', icon: BadgeCheck },
 ];
+
+
+
 export default function page() {
 
       const [currentStep, setCurrentStep] = useState(1);
@@ -63,6 +66,7 @@ export default function page() {
 
   return (
     <>
+
     <div className='container mx-auto'>
          <div className=' p-7 w-full lg:w-[70%]  mx-auto mt-9 rounded-2xl shadow bg-white'>
 

@@ -13,6 +13,7 @@ import { OrderI } from '@/interface'
 import { CircleStar, Loader2 } from 'lucide-react'
 import OrderItems from '@/components/OrderItems/OrderItems'
 
+
 export default  function AllOrders() {
 const [itemsOrder, setItemsOrder] = useState<OrderI[] | null>(null)
 
@@ -34,6 +35,7 @@ useEffect(()=>{
   }
   return (
     <>
+    
     <div className='container mx-auto'>
     <div className='my-5'>
       <h2 className='text-3xl font-bold flex gap-2 items-center'><span>All Orders</span> <CircleStar className='text-yellow-500' strokeWidth={3}/></h2>

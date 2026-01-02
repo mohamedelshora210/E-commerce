@@ -23,6 +23,9 @@ import ShoppingCart from '@/components/ShoppingCart/ShoppingCart';
 import HeartIconComponent from '@/components/HeartIcon/HeartIcon';
 import { Badge } from '@/components/ui/badge';
 
+export const metadata = {
+  title: "Products",
+};
 
 export default async function page({params} : {params : Params}) {
  

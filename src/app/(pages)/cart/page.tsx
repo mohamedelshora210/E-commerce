@@ -12,6 +12,7 @@ import { clearProduct } from './_actions/clearProduct.action';
 import { removeProduct } from './_actions/deleteProduct.action';
 
 
+
 export default  function Cart() {
   const {cartData  , getCart , setCartData} = useContext(CartContext)
   const [removingId, setRemovingId] = useState<string | null>(null)

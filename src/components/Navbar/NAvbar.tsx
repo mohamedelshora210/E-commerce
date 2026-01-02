@@ -75,7 +75,7 @@ export default function Navbar() {
                         <DropdownMenuSeparator />
 
                         {session.status == 'authenticated' ? <>
-                        <DropdownMenuItem asChild className='cursor-pointer'><Profile/></DropdownMenuItem>
+                        <DropdownMenuItem asChild className='cursor-pointer'><Profile name={session?.data?.user.name}/></DropdownMenuItem>
                         <Link href={'/allorders'}><DropdownMenuItem className='cursor-pointer'>All Orders</DropdownMenuItem></Link>
                         <DropdownMenuItem onClick={()=>{signOut({callbackUrl:'/'})}} className='cursor-pointer'>logOut</DropdownMenuItem>
                         </> : <>

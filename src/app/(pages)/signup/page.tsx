@@ -29,9 +29,6 @@ export const formSchema = z.object({
   phone : z.string().nonempty('Phone is Required').regex(/^(\+201|01|00201)[0-2,5]{1}[0-9]{8}/ , 'Enter Valid Number')
 }).refine((data)=>data.password === data.rePassword , {path : ['rePassword'] , message : 'password & rePassword Must be the same'})
 
-
- 
-
 export default function SignUp() {
 
   const [eyePassword, setEyePassword] = useState(false)
@@ -67,6 +64,7 @@ export default function SignUp() {
 
   return (
     <>
+
     <section className={` container mx-auto min-h-[85dvh] my-3 bg-[url('/images/signup.jpg')] rounded-2xl  overflow-auto bg-cover bg-[position:90%_50%] lg:bg-[position:50%_100%] bg-no-repeat `}>
        
         <Form {...form} >

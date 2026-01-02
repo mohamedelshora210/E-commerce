@@ -5,6 +5,10 @@ import Image from 'next/image';
 import { getProductsApi } from '@/components/getProductsActions/getProducts';
 import { CategoryI } from '@/interface';
 import Link from 'next/link';
+import CursalCategories from './CursalCategories/CursalCategories';
+
+
+
 
 export default async function Categories() {
     const response = await getProductsApi('categories')
@@ -16,35 +20,9 @@ export default async function Categories() {
                 <span className='absolute z-1 peer'>All Categories</span> 
                 <StoreIcon className='text-gray-400 peer-hover:text-teal-500 duration-200 absolute w-13 h-13' strokeWidth={2.5}/>
              </h2>  
-             <div className="flex gap-5 animate-scroll px-3">
-    
-    {categories.map((category) => (
-      <Link key={category._id} href={`/categories/${category._id}`}>
-        <div className="min-w-[260px] cursor-pointer group hover:scale-[1.05] hover:rotate-1 duration-300">
-          <Card className="rounded-xl overflow-hidden">
-            <CardHeader>
-              <Image
-                src={category.image}
-                alt={category.name}
-                width={250}
-                height={250}
-                className="w-full h-[200px] object-cover"
-              />
-            </CardHeader>
-
-            <CardContent>
-              <CardTitle className="text-center font-bold text-xl group-hover:text-teal-600 duration-300 uppercase">
-                {category.name}
-              </CardTitle>
-            </CardContent>
-          </Card>
-        </div>
-      </Link>
-    ))}
-
-  </div>
-</div>
-
+             
+              <CursalCategories categories={categories}/>
+      </div>
     </>
   )
 }

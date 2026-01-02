@@ -26,6 +26,7 @@ export const formSchema = z.object({
 })
 
 
+
 export default function Signin() {
 
     const [eyePassword, setEyePassword] = useState(false)
@@ -55,6 +56,7 @@ const searchParams =  useSearchParams()
         }
   return (
     <>
+
     <section className={` container mx-auto min-h-[84dvh] flex items-center my-3 bg-[url('/images/login.jpg')] rounded-2xl  overflow-auto bg-cover bg-[position:50%_56%]  bg-no-repeat `}>
        
         

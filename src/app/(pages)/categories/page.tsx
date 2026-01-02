@@ -6,6 +6,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
+export const metadata = {
+  title: "Categories",
+};
+
 export default async function Categories() {
    const response = await getProductsApi('categories')
       const {data : categories} : {data : CategoryI[]} = await response.json() 
